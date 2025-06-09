@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados para scrollbar */
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937; /* dark-800 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* dark-600 */
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* dark-500 */
+}
+
+::-webkit-scrollbar-corner {
+  background: #1f2937;
+}
+
+/* Quitar las flechas del scrollbar */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Scrollbar solo con barrita, sin flechas */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(31, 41, 55, 0.3); /* dark-800 con transparencia */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.7); /* dark-600 con transparencia */
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.9); /* dark-500 con transparencia */
+}
+
+.scrollbar-thin::-webkit-scrollbar-button {
+  display: none; /* Quitar completamente las flechas */
+}
+
+.scrollbar-thin::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
+
+/* Clase utility personalizada para scroll suave */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar invisible pero funcional */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos para syntax highlighter - asegurar que el código respete los límites */
+.language-css .token.string,
+.style .token.string,
+.token.entity,
+.token.operator,
+.token.url {
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+  white-space: pre-wrap !important;
+}
+
+/* Asegurar que el código largo se ajuste correctamente */
+pre[class*="language-"] {
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: break-word !important;
+  max-width: 100% !important;
+}
+
+pre[class*="language-"] code {
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: break-word !important;
+  max-width: 100% !important;
+}
+
+/* Tokens del syntax highlighter que respeten el ancho */
+.token.string,
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Scroll horizontal suave para tabs en mobile */
+.tab-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.tab-scroll::-webkit-scrollbar {
+  height: 2px;
+}
+
+.tab-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-scroll::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 2px;
+}
+
+.tab-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Estilos específicos para el scrollbar del modal de código */
+.scrollbar-track-dark-light::-webkit-scrollbar-track {
+  background: #2a2a2a; /* dark-light */
+}
+
+.scrollbar-thumb-dark-border::-webkit-scrollbar-thumb {
+  background: #3f3f3f; /* dark-border */
+}
+
+.scrollbar-thumb-light-gray::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0; /* light-gray */
+}
+
+/* Mejorar la experiencia del syntax highlighter en el modal */
+.code-modal-syntax {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+.code-modal-syntax pre {
+  margin: 0 !important;
+  padding: 16px !important;
+  background: transparent !important;
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: break-word !important;
+}
+
+.code-modal-syntax code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace !important;
+}
+
+/* Estilos para números de línea */
+.code-modal-syntax .linenumber {
+  color: #6b7280 !important;
+  padding-right: 1em !important;
+  font-size: 12px !important;
+  min-width: 2.5em !important;
+  text-align: right !important;
+  user-select: none !important;
+}
